@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
-Description: Template for Lambda Sample.
+Description: Template to deploy a Lambda function. NOTE - this creates a public Lambda function with a public HTTP endpoint. Please delete after you're done using.
 
 Resources:
 
@@ -27,6 +27,7 @@ Resources:
       Role: !GetAtt LambdaRole.Arn
 
   # Reference: https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html
+  # This creates a public HTTP endpoint for the Lambda function
   LambdaFunctionUrl:
    Type: AWS::Lambda::Url
    Properties: 
